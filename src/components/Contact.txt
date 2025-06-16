@@ -1,0 +1,235 @@
+import React, { useEffect, useState } from "react";
+import profile from "../images/PXL_20240913_0529575281.jpg"; // <-- fix path if needed
+
+/* ───────────────────────────────────────────────────────── */
+/*                      HERO  SECTION                       */
+/* ───────────────────────────────────────────────────────── */
+const HeroSection = () => {
+  const [hover, setHover] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  return (
+    <section style={styles.wrapper}>
+      {/* 100 % local CSS for keyframes & pseudo‑stuff */}
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+        /* animated gradient ring (around profile) */
+        @keyframes spinGradient {
+          0%   { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+
+        /* highlight gradient text */
+        .gradientText {
+          background: linear-gradient(90deg,#4ef3f3 0%,#ff2bc2 100%);
+          -webkit-background-clip:text;
+          -webkit-text-fill-color:transparent;
+        }
+      `}</style>
+
+      {/* ───────── GRID (flex) ───────── */}
+      <div style={styles.content}>
+        {/* LEFT : Headline + copy */}
+        <div
+          style={{
+            ...styles.left,
+            ...(mounted ? styles.fadeInLeft : {})
+          }}
+        >
+          <p style={styles.greeting}>Hey there, I’m</p>
+
+          <h1 style={styles.name}>
+            <span className="gradientText">Khushali Begde</span>
+          </h1>
+
+          <h2 style={styles.subline}>Crafting tech that <br /> genuinely matters</h2>
+
+          <p style={styles.blurb}>
+            Full‑stack dev & data tinkerer turning ideas into real, useful
+            things. Forever learning, forever shipping.
+          </p>
+
+          {/* CTA Button */}
+          <a
+            href="/Khushali_Begde_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              ...styles.button,
+              ...(hover ? styles.buttonHover : {})
+            }}
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+          >
+            📄 See My Resume
+          </a>
+        </div>
+
+        {/* RIGHT : Avatar with neon ring */}
+        <div
+          style={{
+            ...styles.right,
+            ...(mounted ? styles.fadeInRight : {})
+          }}
+        >
+          <div style={styles.avatarWrap}>
+            {/* spinning ring */}
+            <span style={styles.ring}></span>
+
+            <img src={profile} alt="Khushali Begde" style={styles.avatar} />
+
+            {/* tag */}
+            <span style={styles.tag}>🧠 Tech Tinkerer</span>
+          </div>
+        </div>
+      </div>
+
+      {/* floating blur blobs for ambience */}
+      <div style={styles.blob1}></div>
+      <div style={styles.blob2}></div>
+    </section>
+  );
+};
+
+/* ───────────────────────────────────────────────────────── */
+/*                         STYLES                            */
+/* ───────────────────────────────────────────────────────── */
+const styles = {
+  /* full‑viewport wrapper */
+  wrapper: {
+    position: "relative",
+    minHeight: "100vh",
+    padding: "0 8vw",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    overflow: "hidden",
+    background: "linear-gradient(135deg,#101820 0%,#2d1e40 100%)",
+    fontFamily: "'Inter', sans-serif",
+    color: "#f6f7fb"
+  },
+
+  /* layout */
+  content: {
+    display: "flex",
+    gap: "6vw",
+    alignItems: "center",
+    flexWrap: "wrap",
+    zIndex: 2,
+    maxWidth: 1200
+  },
+  left: {
+    flex: 1,
+    minWidth: 280,
+    opacity: 0,
+    transform: "translateX(-40px)",
+    transition: "opacity .8s ease, transform .8s ease"
+  },
+  right: {
+    flex: 1,
+    minWidth: 280,
+    textAlign: "center",
+    opacity: 0,
+    transform: "translateX(40px)",
+    transition: "opacity .8s ease, transform .8s ease"
+  },
+  fadeInLeft: { opacity: 1, transform: "translateX(0)" },
+  fadeInRight: { opacity: 1, transform: "translateX(0)" },
+
+  /* typography */
+  greeting: { fontSize: 18, marginBottom: 8, color: "#8b9ab8", fontWeight: 600 },
+  name: { fontSize: 56, margin: "0 0 4px 0", fontWeight: 800, lineHeight: 1.1 },
+  subline: { fontSize: 32, margin: "0 0 24px 0", fontWeight: 700, color: "#c4c8d7" },
+  blurb: { fontSize: 18, lineHeight: 1.7, maxWidth: 520, marginBottom: 40, color: "#b1b5c9" },
+
+  /* button */
+  button: {
+    display: "inline-block",
+    padding: "14px 36px",
+    borderRadius: 40,
+    fontSize: 18,
+    fontWeight: 600,
+    letterSpacing: 0.5,
+    background: "linear-gradient(90deg,#ff2bc2 0%,#4ef3f3 100%)",
+    color: "#101820",
+    boxShadow: "0 8px 20px rgba(79,237,238,0.25)",
+    transition: "all .35s ease",
+    textDecoration: "none"
+  },
+  buttonHover: {
+    transform: "translateY(-4px) scale(1.04)",
+    boxShadow: "0 12px 28px rgba(79,237,238,0.45)"
+  },
+
+  /* avatar + neon ring */
+  avatarWrap: {
+    position: "relative",
+    width: 320,
+    height: 320,
+    margin: "0 auto"
+  },
+  ring: {
+    content: "''",
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    borderRadius: "50%",
+    padding: 6,
+    background: "conic-gradient(from 0deg,#4ef3f3 0%,#ff2bc2 50%,#4ef3f3 100%)",
+    animation: "spinGradient 6s linear infinite",
+    zIndex: 1,
+    mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+    maskComposite: "exclude" /* cuts hole for avatar */
+  },
+  avatar: {
+    position: "relative",
+    zIndex: 2,
+    width: "100%",
+    height: "100%",
+    borderRadius: "50%",
+    objectFit: "cover",
+    boxShadow: "0 15px 35px rgba(0,0,0,0.45)"
+  },
+  tag: {
+    position: "absolute",
+    bottom: -22,
+    left: "50%",
+    transform: "translateX(-50%)",
+    background: "#292d45",
+    padding: "6px 16px",
+    borderRadius: 20,
+    fontSize: 14,
+    fontWeight: 600,
+    color: "#f6f7fb",
+    boxShadow: "0 3px 6px rgba(0,0,0,0.35)",
+    zIndex: 3
+  },
+
+  /* background blobs */
+  blob1: {
+    position: "absolute",
+    width: 400,
+    height: 400,
+    top: "-120px",
+    left: "-120px",
+    background: "radial-gradient(circle,#ff2bc2 0%,transparent 70%)",
+    filter: "blur(120px)",
+    opacity: 0.45
+  },
+  blob2: {
+    position: "absolute",
+    width: 350,
+    height: 350,
+    bottom: "-100px",
+    right: "-100px",
+    background: "radial-gradient(circle,#4ef3f3 0%,transparent 70%)",
+    filter: "blur(120px)",
+    opacity: 0.45
+  }
+};
+
+export default HeroSection;

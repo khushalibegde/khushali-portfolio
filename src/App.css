@@ -1,6 +1,13 @@
 .App {
   text-align: center;
+  background-color: "linear-gradient(135deg, #fffdf4 0%, #f9f7f1 100%)";
 }
+html {
+  scroll-padding-top: 20px; /* or match your navbar's height */
+  scroll-behavior: smooth;
+}
+
+
 
 .App-logo {
   height: 40vmin;
@@ -12,6 +19,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
 
 .App-header {
   background-color: #282c34;

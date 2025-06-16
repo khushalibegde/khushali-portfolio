@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import About from './components/About';
+import Contact from './components/Contact';
+import Education from './components/Education';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Socials from './components/Socials';
+import Volunteer from './components/Volunteer';
+import Achievement from './components/Achievement';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div id="about" className="section"><About /></div>
+      <div id="achievement" className="section"><Achievement /></div>
+      <div id="skills" className="section"><Skills /></div>
+      <div id="projects" className="section"><Projects /></div>
+      <div id="volunteer" className="section"><Volunteer /></div>
+      <div id="education" className="section"><Education /></div>
+      <div id="socials" className="section"><Socials /></div>
+      <div id="contact" className="section"><Contact /></div>
+      <Footer />
     </div>
   );
 }
