@@ -83,7 +83,7 @@ const HeroSection = () => {
             style={{ ...s.cta, ...(hover ? s.ctaHover : {}) }}
             onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}
           >
-            📄 Grab my resume
+            📄 Grab my resume
           </a>
         </div>
 
@@ -114,7 +114,7 @@ const s = {
     background:`linear-gradient(120deg,${deepBurgundy},${burgundy})`,
     fontFamily:"'Inter', sans-serif", color:cream
   },
-  
+
   curveWrap:{
     position:"absolute", top:22, left:"50%", transform:"translateX(-50%)",
     fontFamily:"'Playfair Display', serif", fontSize:18,
@@ -130,7 +130,8 @@ const s = {
   content:{ display:"flex", gap:"6vw", flexWrap:"wrap", alignItems:"center",
             maxWidth:1200, zIndex:2 },
   left :{ flex:1, minWidth:280, opacity:0, transform:"translateX(-40px)",
-          transition:"opacity .8s, transform .8s" },
+          transition:"opacity .8s, transform .8s",
+          marginRight:100 },
   right:{ flex:1, minWidth:280, textAlign:"center", opacity:0,
           transform:"translateX(40px)", transition:"opacity .8s, transform .8s" },
   fadeInL:{ opacity:1, transform:"translateX(0)" },
@@ -158,13 +159,17 @@ const s = {
   },
 
   avatarWrap:{ position:"relative", width:320, height:320, margin:"0 auto" },
-  ring:{
-    position:"absolute", inset:0, padding:6, borderRadius:"50%",
-    background:"conic-gradient(from 0deg,#ffe2d6 0%,#b41a4c 40%,#ffe2d6 100%)",
-    animation:"spinRing 8s linear infinite",
-    mask:"linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-    maskComposite:"exclude", WebkitMaskComposite:"destination-out", zIndex:1
-  },
+  ring: {
+  position: "absolute",
+  inset: -10,               
+  borderRadius: "50%",
+  padding: 20,            
+  background: "transparent",     
+  boxShadow: "0 0 0 3px rgba(255,205,205,.45)" ,   
+  zIndex: 1,
+  
+},
+
   avatar:{
     position:"relative", zIndex:2, width:"100%", height:"100%",
     borderRadius:"50%", objectFit:"cover",
