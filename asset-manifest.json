@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/khushalibegde/khushali-portfolio/static/css/main.7d2ba75d.css",
+    "main.js": "/khushalibegde/khushali-portfolio/static/js/main.3e76ff95.js",
+    "static/js/453.1407b060.chunk.js": "/khushalibegde/khushali-portfolio/static/js/453.1407b060.chunk.js",
+    "static/media/pfp3.png": "/khushalibegde/khushali-portfolio/static/media/pfp3.8703bb89eb0218923239.png",
+    "static/media/hacksphere.jpg": "/khushalibegde/khushali-portfolio/static/media/hacksphere.1cecc1522151c8fa561c.jpg",
+    "static/media/innovenza.jpg": "/khushalibegde/khushali-portfolio/static/media/innovenza.a73d27adfeddfaaf80e0.jpg",
+    "static/media/angel_demon3.jpg": "/khushalibegde/khushali-portfolio/static/media/angel_demon3.fd4c840787857b85f399.jpg",
+    "static/media/PXL_20240913_0529575281.jpg": "/khushalibegde/khushali-portfolio/static/media/PXL_20240913_0529575281.5db5d6056c77b18dc301.jpg",
+    "static/media/kaushal6.jpg": "/khushalibegde/khushali-portfolio/static/media/kaushal6.8081f5a78de6a96634e9.jpg",
+    "static/media/angel_demon4.jpg": "/khushalibegde/khushali-portfolio/static/media/angel_demon4.936caf4f14b185f8b71a.jpg",
+    "static/media/kaushal4.jpg": "/khushalibegde/khushali-portfolio/static/media/kaushal4.990484fa7e915c47c5a7.jpg",
+    "static/media/angel_demon1.jpg": "/khushalibegde/khushali-portfolio/static/media/angel_demon1.b516465111ac8b2283ea.jpg",
+    "static/media/angel_demon2.jpg": "/khushalibegde/khushali-portfolio/static/media/angel_demon2.601a019c01703958c1a0.jpg",
+    "static/media/edu4.jpeg": "/khushalibegde/khushali-portfolio/static/media/edu4.af47a37e8d49527542e9.jpeg",
+    "static/media/kaushal1.jpg": "/khushalibegde/khushali-portfolio/static/media/kaushal1.79d81751a1d143b1b0bc.jpg",
+    "static/media/kaushal3.jpg": "/khushalibegde/khushali-portfolio/static/media/kaushal3.02a3c9c4a7706c49fd3c.jpg",
+    "static/media/kaushal5.jpg": "/khushalibegde/khushali-portfolio/static/media/kaushal5.dafbeb9c0e98abbab2f3.jpg",
+    "static/media/edu3.jpeg": "/khushalibegde/khushali-portfolio/static/media/edu3.9493978cbdf1c93e59b1.jpeg",
+    "static/media/edu6.jpeg": "/khushalibegde/khushali-portfolio/static/media/edu6.7985d2b1afad7ee2310a.jpeg",
+    "static/media/edu1.jpeg": "/khushalibegde/khushali-portfolio/static/media/edu1.e79a289593a4dfa65a83.jpeg",
+    "static/media/edu2.jpeg": "/khushalibegde/khushali-portfolio/static/media/edu2.6f0b4751465bafd016a9.jpeg",
+    "static/media/kaushal2.jpg": "/khushalibegde/khushali-portfolio/static/media/kaushal2.b3ee3c822b7ab9b3e356.jpg",
+    "static/media/edu5.jpeg": "/khushalibegde/khushali-portfolio/static/media/edu5.b8585483c90546520223.jpeg",
+    "index.html": "/khushalibegde/khushali-portfolio/index.html",
+    "main.7d2ba75d.css.map": "/khushalibegde/khushali-portfolio/static/css/main.7d2ba75d.css.map",
+    "main.3e76ff95.js.map": "/khushalibegde/khushali-portfolio/static/js/main.3e76ff95.js.map",
+    "453.1407b060.chunk.js.map": "/khushalibegde/khushali-portfolio/static/js/453.1407b060.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7d2ba75d.css",
+    "static/js/main.3e76ff95.js"
+  ]
+}
