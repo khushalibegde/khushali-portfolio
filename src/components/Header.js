@@ -1,21 +1,60 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
+const sections = [
+  "About",
+  "Achievement",
+  "Skills",
+  "Projects",
+  "Volunteer",
+  "Education",
+  "Socials",
+  "Contact",
+  "Resume",
+];
 
 const Header = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const handleLinkClick = () => setMenuOpen(false);
+
   return (
     <>
       <header style={styles.header}>
-        <nav style={styles.nav}>
-          {[
-            "About",
-            "Achievement",
-            "Skills",
-            "Projects",
-            "Volunteer",
-            "Education",
-            "Socials",
-            "Contact",
-            "Resume",
-          ].map((section) => {
+        {isMobile && (
+          <button
+            aria-label="Toggle menu"
+            onClick={() => setMenuOpen(!menuOpen)}
+            style={styles.menuBtn}
+          >
+            {menuOpen ? "×" : "☰"}
+          </button>
+        )}
+
+        <nav
+          style={{
+            ...styles.nav,
+            flexDirection: isMobile ? "column" : "row",
+            position: isMobile ? "fixed" : "static",
+            top: isMobile && menuOpen ? 66 : -1000,
+            left: 0,
+            width: "100%",
+            backgroundColor: "#2a0008",
+            padding: isMobile ? "24px 0" : 0,
+            gap: isMobile ? "24px" : "30px",
+            transition: "top 0.3s ease-in-out",
+          }}
+        >
+          {sections.map((section) => {
             const isResume = section === "Resume";
             return (
               <a
@@ -24,7 +63,7 @@ const Header = () => {
                 target={isResume ? "_blank" : "_self"}
                 rel={isResume ? "noopener noreferrer" : undefined}
                 style={styles.link}
-                className="nav-link"
+                onClick={handleLinkClick}
               >
                 {section}
               </a>
@@ -33,30 +72,7 @@ const Header = () => {
         </nav>
       </header>
 
-      <div style={{ height: "66px" }}></div>
-
-      <style>
-        {`
-          .nav-link::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 0%;
-            height: 2px;
-            background-color: #fddbb0;
-            transition: width 0.3s ease;
-          }
-
-          .nav-link:hover::after {
-            width: 100%;
-          }
-
-          .nav-link:hover {
-            color: #fddbb0;
-          }
-        `}
-      </style>
+      <div style={{ height: "66px" }} />
     </>
   );
 };
@@ -67,7 +83,7 @@ const styles = {
     top: 0,
     width: "100%",
     backgroundColor: "#2a0008",
-    borderBottom: "1px solid #5b0015", 
+    borderBottom: "1px solid #5b0015",
     padding: "19px 0",
     textAlign: "center",
     zIndex: 1000,
@@ -76,8 +92,9 @@ const styles = {
   nav: {
     display: "flex",
     justifyContent: "center",
-    gap: "30px",
+    alignItems: "center",
     fontFamily: "'Poppins', sans-serif",
+    zIndex: 999,
   },
   link: {
     color: "#fddbb0",
@@ -87,6 +104,18 @@ const styles = {
     paddingBottom: "4px",
     position: "relative",
     transition: "color 0.3s ease",
+  },
+  menuBtn: {
+    background: "none",
+    border: "none",
+    color: "#fddbb0",
+    fontSize: "1.6rem",
+    cursor: "pointer",
+    position: "absolute",
+    left: "20px",
+    top: "50%",
+    transform: "translateY(-50%)",
+    zIndex: 1100,
   },
 };
 
