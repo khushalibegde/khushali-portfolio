@@ -1,3 +1,24 @@
+# Khushali Begde — Portfolio Website
+
+> Dream · Design · Deliver
+
+This is the source code for my personal portfolio — built to showcase my skills, projects, and personality as a full-stack developer & data whisperer. 
+
+🚀 [Live Site](https://khushalibegde.github.io/khushali-portfolio)
+
+---
+
+## 🛠️ Tech Stack
+
+- **React.js** – Frontend framework
+- **HTML5 + CSS3** – Markup & Styling (with inline style objects for flair)
+- **gh-pages** – For deploying to GitHub Pages
+- **React Icons** – For a dash of visual sparkle ✨
+
+---
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
