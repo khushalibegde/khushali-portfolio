@@ -38,22 +38,19 @@ export default function SkillsPage() {
       <style>{`
         @keyframes lift { from {opacity:0; transform:translateY(40px);} to {opacity:1; transform:translateY(0);} }
         @media(max-width:850px){
-  .card{flex-direction:column;}
-}
-
-.vtitle {
-  writing-mode:horizontal-tb !important;
-  transform: none !important;
-  white-space: normal;
-  padding: 16px;
-  font-size: 1rem !important;
-  text-align: left !important;
-}
-
+        .card{flex-direction:column;}}
+        .vtitle {
+          writing-mode:horizontal-tb !important;
+          transform: none !important;
+          white-space: normal;
+          padding: 16px;
+          font-size: 1rem !important;
+          text-align: left !important;
+        }
         .skill:hover{background:rgba(255,255,255,.08);}
       `}</style>
 
-      <h1 style={st.heading}>⚡ Skill Arsenal</h1>
+      <h1 style={st.heading}>Skills ⚒︎</h1>
 
       {Object.entries(skillsData).map(([cat, skills], i) => (
         <div key={cat} className="card" style={{ ...st.card, animation: `lift .6s ease ${i * 0.07}s both` }}>
@@ -133,7 +130,6 @@ const st = {
     display: "flex",
     flexWrap: "wrap",
     gap: 12
-    // 🔥 no fixed height, this grows as per content
   },
   skill: {
     padding: "8px 16px",

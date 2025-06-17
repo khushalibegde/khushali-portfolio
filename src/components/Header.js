@@ -7,26 +7,56 @@ const Header = () => {
         <nav style={styles.nav}>
           {[
             "About",
+            "Achievement",
             "Skills",
             "Projects",
-            "Resume",
-            "Socials",
             "Volunteer",
-            "Achievement",
             "Education",
+            "Socials",
             "Contact",
-          ].map((section) => (
-            <a
-              key={section}
-              href={`#${section.toLowerCase()}`}
-              style={styles.link}
-            >
-              {section}
-            </a>
-          ))}
+            "Resume",
+          ].map((section) => {
+            const isResume = section === "Resume";
+            return (
+              <a
+                key={section}
+                href={isResume ? "/Khushali_Begde_Resume.pdf" : `#${section.toLowerCase()}`}
+                target={isResume ? "_blank" : "_self"}
+                rel={isResume ? "noopener noreferrer" : undefined}
+                style={styles.link}
+                className="nav-link"
+              >
+                {section}
+              </a>
+            );
+          })}
         </nav>
       </header>
-      <div style={{ height: "66px" }}></div> {/* buffer for fixed header */}
+
+      <div style={{ height: "66px" }}></div>
+
+      <style>
+        {`
+          .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0%;
+            height: 2px;
+            background-color: #fddbb0;
+            transition: width 0.3s ease;
+          }
+
+          .nav-link:hover::after {
+            width: 100%;
+          }
+
+          .nav-link:hover {
+            color: #fddbb0;
+          }
+        `}
+      </style>
     </>
   );
 };
@@ -36,12 +66,12 @@ const styles = {
     position: "fixed",
     top: 0,
     width: "100%",
-    backgroundColor: "#fffef9",
-    borderBottom: "1px solid #f4a300",
-    padding: "14px 0",
+    backgroundColor: "#2a0008",
+    borderBottom: "1px solid #5b0015", 
+    padding: "19px 0",
     textAlign: "center",
     zIndex: 1000,
-    boxShadow: "0 2px 6px rgba(0,0,0,0.07)",
+    boxShadow: "0 2px 8px rgba(0,0,0,0.25)",
   },
   nav: {
     display: "flex",
@@ -50,12 +80,13 @@ const styles = {
     fontFamily: "'Poppins', sans-serif",
   },
   link: {
-    color: "#f4a300",
+    color: "#fddbb0",
     textDecoration: "none",
     fontWeight: 600,
     fontSize: "1rem",
     paddingBottom: "4px",
     position: "relative",
+    transition: "color 0.3s ease",
   },
 };
 

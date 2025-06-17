@@ -6,6 +6,7 @@ import pfp from '../images/pfp3.png';
 const Contact = () => {
     return (
         <div style={styles.cardWrapper}>
+          <h1 style={styles.title}>Contact ✦</h1>
             <div style={styles.card}>
                 <div style={styles.left}>
                   <div style={styles.qrBox}>
@@ -57,13 +58,16 @@ const Contact = () => {
 
 const styles = {
   cardWrapper:{
-    background: "linear-gradient(135deg, #fffdf4 0%, #f9f7f1 100%)",
-    width: '100%',
-    height: '94vh',
-    alignItems: 'center',
-    display: 'flex',
-    justifyContent: 'center',
-  },
+  background: "linear-gradient(135deg,rgb(241, 226, 224) 0%, #e2e2e2 100%)",
+  width: '100%',
+  height: '94vh',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  paddingTop: '30px', 
+  gap: '30px',         
+},
+
   card:{
     width: '45%',
     height: '50%',
@@ -81,7 +85,7 @@ const styles = {
     alignItems: 'center',
     display: 'flex',
     flexDirection: 'column', 
-    borderRight: '3px solid rgba(122, 113, 27, 0.38)',
+    borderRight: '3px solid rgba(221, 163, 153, 0.66)',
 
   },
   
@@ -110,7 +114,7 @@ const styles = {
   },
   icon: {
     fontSize: '32px',
-    color: 'rgba(255, 183, 3, 0.7)',
+    color: '#42000e',
     cursor: 'pointer',
   },
   iconLink: {
@@ -119,7 +123,7 @@ const styles = {
   right: {
     width: '60%',
     height: '100%',
-    background: 'rgba(255, 183, 3, 0.7)',
+    background: '#42000e',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -147,7 +151,14 @@ const styles = {
     fontSize: '0.95rem',
     marginTop: '15px',
   },
-
+title: {
+    fontFamily: "'Playfair Display', serif",
+    fontSize: "2.8rem",
+    color: "#42000e",
+    textAlign: "center",
+    marginBottom: "60px",
+    letterSpacing: "1px",
+  },
 
 };
 export default Contact;

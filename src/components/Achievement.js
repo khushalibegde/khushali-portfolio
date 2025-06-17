@@ -1,9 +1,7 @@
-// Achievements.jsx  — flip‑card edition ⭐
 import React, { useEffect } from "react";
 import innovenza from "../images/innovenza.jpg";
 import hacksphere from "../images/hacksphere.jpg";
 
-/* Inject Inter once */
 const useInterFont = () => {
   useEffect(() => {
     if (!document.getElementById("gf‑inter")) {
@@ -174,14 +172,12 @@ export default function Achievements() {
 
 
 
-      <h1 style={st.h1}>Achievements 🌟</h1>
+      <h1 style={st.h1}>Achievements ✺</h1>
 
       <div style={st.wrapper}>
         {DATA.map((card) => (
           <div key={card.title} className="flip-card" style={st.card}>
             <div className="flip-inner">
-              {/* FRONT */}
-              {/* FRONT SIDE */}
               <div className="face front" style={st.front}>
                 <img src={card.img} alt={card.title} style={st.frontImg} />
                 <div style={st.frontText}>
@@ -283,3 +279,4 @@ const st = {
     },
 
 };
+

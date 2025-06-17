@@ -1,10 +1,6 @@
-/* ───────────────────────────────────────────
-   𝐇𝐞𝐫𝐨𝐒𝐞𝐜𝐭𝐢𝐨𝐧.jsx  –  cherry‑burgundy deluxe
-   ─────────────────────────────────────────── */
 import React, { useEffect, useState } from "react";
 import profile from "../images/PXL_20240913_0529575281.jpg";
 
-/* dynamically load fonts (Inter + Playfair) */
 const loadGoogleFonts = () => {
   const fonts = [
     { id: "gf-inter",    href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" },
@@ -27,43 +23,7 @@ const HeroSection = () => {
 
   return (
     <section style={s.wrapper}>
-      {/* 𝗶𝗻𝗹𝗶𝗻𝗲 𝗸𝗲𝘆𝗳𝗿𝗮𝗺𝗲𝘀 & glow */}
-      <style>{`
-        @keyframes spinRing   { to { transform: rotate(360deg); } }
-        @keyframes shimmer    { 0%,100%{filter:brightness(1);} 50%{filter:brightness(1.25);} }
-        @keyframes twinkle    { 0%,100%{ transform:scale(1);   opacity:.6; }
-                               50%     { transform:scale(1.3); opacity:1; } }
-      `}</style>
-
-      {/* ► curved headline crown */}
-      <div style={s.curveWrap}>
-        {/* curved heading – handcrafted arc path */}
-<svg width="420" height="100" viewBox="0 0 420 100" style={s.svgArc}>
-  <defs>
-    <path
-      id="curve"
-      d="M20,80 A190,190 0 0,1 400,80"
-      fill="transparent"
-    />
-  </defs>
-  <text width="100%">
-    <textPath
-      xlinkHref="#curve"
-      startOffset="50%"
-      textAnchor="middle"
-      style={s.svgText}
-    >
-      ✨ Dream · Design · Deliver ✨
-    </textPath>
-  </text>
-</svg>
-
-      </div>
-
-
-      {/* ► main grid */}
       <div style={s.content}>
-        {/* LEFT PANEL */}
         <div style={{ ...s.left, ...(mounted ? s.fadeInL : {}) }}>
           <p  style={s.greet}>Hey there, I’m</p>
 
